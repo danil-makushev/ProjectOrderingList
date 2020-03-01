@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .navbar__buttons{
+        button{
+            margin-left: 0.5em;
+        }
+    }
+}

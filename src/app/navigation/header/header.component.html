@@ -1,8 +1,13 @@
-<nav class="navbar navbar-dark bg-primary">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" >Component Order Form</a>
-    </div>
-  </div>
-</nav>
-
+<mat-toolbar class="navbar">
+  <span class="navbar__title">ProjectOrderingList</span>
+  <span class="navbar__buttons">
+    <button mat-stroked-button>Projects</button>
+    <button mat-stroked-button>Order Form</button>
+    <button mat-stroked-button [matMenuTriggerFor]="menu">Settings <mat-icon aria-hidden="false">arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Option 1</button>
+      <button mat-menu-item>Option 2</button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
