@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {NavigationModule} from './navigation/navigation.module';
-import {ShoppingModule} from './shopping/shopping.module';
+import {OrderModule} from './order/order.module';
 import {ProjectModule} from './project/project.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,7 +19,7 @@ import {MaterialModule} from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     NavigationModule,
-    ShoppingModule,
+    OrderModule,
     ProjectModule,
     BrowserAnimationsModule,
     MaterialModule

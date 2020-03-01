@@ -1,0 +1,22 @@
+.order-list-edit {
+  display: flex;
+  flex-direction: column;
+
+  .order-list-edit__input {
+    display: flex;
+    flex-direction: row;
+
+    mat-form-field {
+      margin-right: 0.5em;
+    }
+  }
+
+  .order-list-edit__buttons {
+    display: flex;
+    flex-direction: row;
+
+    button {
+      margin-right: 0.5em;
+    }
+  }
+}

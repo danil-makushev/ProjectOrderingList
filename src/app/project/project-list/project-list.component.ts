@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../project.model';
 
 @Component({
   selector: 'app-project-list',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
+
+  projects: Project[] = [
+    new Project("Test Project", "Test description", "https://upload.wikimedia.org/wikipedia/commons/4/45/Infinity_Mirror.png"),
+  ];
+
 
   constructor() { }
 
