@@ -1,25 +1,13 @@
 <div class="project-list">
   <div class="project-list__projects">
-    <h3>Project List</h3>
-    <div *ngFor="let project of projects" >
-      {{project.title}}
-      {{project.description}}
-      {{project.imageURL}}
-      <app-project-item></app-project-item>
+    <div *ngFor="let project of projects">
+      <app-project-item
+        [project]="project"
+        (projectSelected)="onLoadProjectDetails(project)"
+      ></app-project-item>
     </div>
-
   </div>
-  <div class="project-list__description">
-    <mat-toolbar class="project-list__description__actions">
-      <button mat-stroked-button>Order Parts</button>
-      <button mat-stroked-button>Edit</button>
-      <button mat-stroked-button color="warn">Delete</button>
-    </mat-toolbar>
-    <div class="project-list__description__text">
-      Description
-    </div>
-    <div class="project-list__description__parts">
-      Parts
-    </div>
+  <div class="project-detail">
+    <app-project-detail [project]="selectedProject"></app-project-detail>
   </div>
 </div>

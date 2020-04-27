@@ -1,0 +1,13 @@
+.project-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 1px solid grey;
+    border-radius: 0.5em;
+
+    mat-toolbar {
+        border-radius: 0 0.5em 0 0;
+    }
+}
+.content {
+    padding: 1em;
+}

@@ -4,9 +4,10 @@ import { ProjectListComponent } from "./project-list/project-list.component";
 import { ProjectItemComponent } from "./project-item/project-item.component";
 
 import { MaterialModule } from "../material/material.module";
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
-  declarations: [ProjectListComponent, ProjectItemComponent],
+  declarations: [ProjectListComponent, ProjectItemComponent, ProjectDetailComponent],
   imports: [CommonModule, MaterialModule],
   exports: [ProjectListComponent]
 })

@@ -1,21 +1,19 @@
-<p>order-list-edit works!</p>
-
 <div class="order-list-edit">
-    <div class="order-list-edit__input">
-        <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Amount</mat-label>
-            <input matInput>
-          </mat-form-field>
-    </div>
-    <div class="order-list-edit__buttons">
-        <button mat-stroked-button>Add</button>
-        <button mat-stroked-button>Delete</button>
-        <button mat-stroked-button>Clear</button>
-    </div>
+  <div class="order-list-edit__input">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput #nameInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput #amountInput />
+    </mat-form-field>
+  </div>
+  <div class="order-list-edit__buttons">
+    <button mat-stroked-button (click)="onAddNewPart()">
+      Add
+    </button>
+    <button mat-stroked-button>Delete</button>
+    <button mat-stroked-button>Clear</button>
+  </div>
 </div>
-
-  

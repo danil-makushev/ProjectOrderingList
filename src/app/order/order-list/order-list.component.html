@@ -1,8 +1,8 @@
 <div class="order-list">
-    <app-order-list-edit></app-order-list-edit>
-    <ul>
-        <li *ngFor="let part of parts">
-            {{part.name}} x {{part.amount}}
-        </li>
-    </ul>
+  <app-order-list-edit
+    (newPartAdded)="addNewPart($event)"
+  ></app-order-list-edit>
+  <ul>
+    <li *ngFor="let part of parts">{{ part.name }} x {{ part.amount }}</li>
+  </ul>
 </div>

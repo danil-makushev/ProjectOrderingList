@@ -1,1 +1,11 @@
-<p>project-item works!</p>
+<div class="project-item" (click)="onSelected()">
+  <div class="image-container">
+    <img src="{{ project.imageURL }}" alt="" />
+  </div>
+  <div class="content-container">
+    <mat-toolbar>{{ project.title }}</mat-toolbar>
+    <div class="content">
+      <p>{{ project.description }}</p>
+    </div>
+  </div>
+</div>
