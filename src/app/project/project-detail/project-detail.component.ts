@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Project } from "../project.model";
+import { OrderService } from "src/app/order/order.service";
+import { Part } from "../../sharred/part.model";
 
 @Component({
   selector: "app-project-detail",
@@ -7,13 +9,13 @@ import { Project } from "../project.model";
   styleUrls: ["./project-detail.component.scss"],
 })
 export class ProjectDetailComponent implements OnInit {
-  @Input() project = new Project(
-    "Test Project",
-    "Test description",
-    "https://upload.wikimedia.org/wikipedia/commons/4/45/Infinity_Mirror.png"
-  );
+  @Input() project: Project;
 
-  constructor() {}
+  constructor(private orderService: OrderService) {}
+
+  onAddParts() {
+    this.orderService.addParts(this.project.parts);
+  }
 
   ngOnInit(): void {}
 }

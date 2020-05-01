@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Part } from "src/app/sharred/part.model";
+import { OrderService } from "../order.service";
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: "app-order-list",
@@ -7,13 +9,18 @@ import { Part } from "src/app/sharred/part.model";
   styleUrls: ["./order-list.component.scss"],
 })
 export class OrderListComponent implements OnInit {
-  parts: Part[] = [new Part("test Part Name", 2)];
+  parts: Part[];
 
   addNewPart(part: Part) {
-    this.parts.push(part);
+    this.orderService.addPart(part);
   }
 
-  constructor() {}
+  constructor(private orderService: OrderService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.parts = this.orderService.getParts();
+    this.orderService.partsChanged.subscribe((parts: Part[]) => {
+      this.parts = parts;
+    });
+  }
 }

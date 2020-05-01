@@ -1,10 +1,7 @@
 <div class="project-list">
   <div class="project-list__projects">
     <div *ngFor="let project of projects">
-      <app-project-item
-        [project]="project"
-        (projectSelected)="onLoadProjectDetails(project)"
-      ></app-project-item>
+      <app-project-item [project]="project"></app-project-item>
     </div>
   </div>
   <div class="project-detail">

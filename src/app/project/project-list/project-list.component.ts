@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Project } from "../project.model";
+import { ProjectService } from "../project.service";
 
 @Component({
   selector: "app-project-list",
@@ -7,25 +8,16 @@ import { Project } from "../project.model";
   styleUrls: ["./project-list.component.scss"],
 })
 export class ProjectListComponent implements OnInit {
-  projects: Project[] = [
-    new Project(
-      "Parent Project",
-      "Parent description",
-      "https://upload.wikimedia.org/wikipedia/commons/4/45/Infinity_Mirror.png"
-    ),
-  ];
+  projects: Project[] = [];
 
-  selectedProject = new Project(
-    "Test Project",
-    "Test description",
-    "https://upload.wikimedia.org/wikipedia/commons/4/45/Infinity_Mirror.png"
-  );
+  selectedProject: Project;
+  constructor(private projectService: ProjectService) {}
 
-  onLoadProjectDetails(project: Project) {
-    this.selectedProject = project;
+  ngOnInit(): void {
+    this.projects = this.projectService.getProjects();
+    this.selectedProject = this.projectService.getProjects()[0];
+    this.projectService.projectSelected.subscribe((project: Project) => {
+      this.selectedProject = project;
+    });
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

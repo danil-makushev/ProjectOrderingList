@@ -1,13 +1,18 @@
 <div class="project-list__description">
   <mat-toolbar class="project-list__description__actions">
-    <button mat-stroked-button>Order Parts</button>
+    <button mat-stroked-button (click)="onAddParts()">Order Parts</button>
     <button mat-stroked-button>Edit</button>
     <button mat-stroked-button color="warn">Delete</button>
   </mat-toolbar>
   <div class="project-list__description__text">
+    <h3>{{ project.title }}</h3>
     {{ project.description }}
   </div>
   <div class="project-list__description__parts">
-    Parts
+    <ul>
+      <li *ngFor="let part of project.parts">
+        {{ part.name }} - {{ part.amount }}
+      </li>
+    </ul>
   </div>
 </div>
