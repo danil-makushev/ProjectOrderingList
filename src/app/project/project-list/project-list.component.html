@@ -1,10 +1,19 @@
 <div class="project-list">
   <div class="project-list__projects">
-    <div *ngFor="let project of projects">
-      <app-project-item [project]="project"></app-project-item>
-    </div>
+    <app-project-item
+      *ngFor="let project of projects"
+      [project]="project"
+    ></app-project-item>
+    <button
+      mat-fab
+      color="primary"
+      class="add-project-button"
+      (click)="onAddProject()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
   <div class="project-detail">
-    <app-project-detail [project]="selectedProject"></app-project-detail>
+    <router-outlet></router-outlet>
   </div>
 </div>

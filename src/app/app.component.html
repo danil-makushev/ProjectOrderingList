@@ -1,9 +1,6 @@
 <header>
-  <app-header (featureSelected)="onNavigate($event)"></app-header>
+  <app-header></app-header>
 </header>
-<main>
-  <app-project-list *ngIf="loadedFeature === 'projects'"></app-project-list>
-  <app-order-list *ngIf="loadedFeature === 'order'"></app-order-list>
+<main class="main-container">
+  <router-outlet></router-outlet>
 </main>
-
-<router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Project } from "../project.model";
-import { ProjectService } from "../project.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-project-item",
@@ -10,11 +10,7 @@ import { ProjectService } from "../project.service";
 export class ProjectItemComponent implements OnInit {
   @Input() project: Project;
 
-  onSelected() {
-    this.projectService.projectSelected.emit(this.project);
-  }
-
-  constructor(private projectService: ProjectService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

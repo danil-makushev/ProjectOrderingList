@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Project } from "../project.model";
 import { OrderService } from "src/app/order/order.service";
 import { Part } from "../../sharred/part.model";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ProjectService } from "../project.service";
 
 @Component({
   selector: "app-project-detail",
@@ -9,13 +11,28 @@ import { Part } from "../../sharred/part.model";
   styleUrls: ["./project-detail.component.scss"],
 })
 export class ProjectDetailComponent implements OnInit {
-  @Input() project: Project;
+  project: Project;
 
-  constructor(private orderService: OrderService) {}
+  constructor(
+    private orderService: OrderService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private projectService: ProjectService
+  ) {}
 
   onAddParts() {
     this.orderService.addParts(this.project.parts);
   }
 
-  ngOnInit(): void {}
+  onEditProject() {
+    this.router.navigate(["edit"], {
+      relativeTo: this.route,
+    });
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.project = this.projectService.getProjectById(+params["id"]);
+    });
+  }
 }

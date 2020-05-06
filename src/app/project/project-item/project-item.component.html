@@ -1,9 +1,9 @@
-<div class="project-item" (click)="onSelected()">
+<div class="project-item" [routerLink]="['/projects', project.id]">
   <div class="image-container">
     <img src="{{ project.imageURL }}" alt="" />
   </div>
   <div class="content-container">
-    <mat-toolbar>{{ project.title }}</mat-toolbar>
+    <mat-toolbar routerLinkActive="selected">{{ project.title }}</mat-toolbar>
     <div class="content">
       <p>{{ project.description }}</p>
     </div>

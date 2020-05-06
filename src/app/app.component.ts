@@ -7,11 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "project-ordering-list";
-
-  loadedFeature = "projects";
-
-  onNavigate(feature: string) {
-    console.log(feature);
-    this.loadedFeature = feature;
-  }
 }

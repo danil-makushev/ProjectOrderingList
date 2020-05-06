@@ -1,8 +1,8 @@
 <mat-toolbar class="navbar">
   <span class="navbar__title">Project Recipe Book</span>
   <span class="navbar__buttons">
-    <button mat-stroked-button (click)="onSelect('projects')">Projects</button>
-    <button mat-stroked-button (click)="onSelect('order')">Order</button>
+    <button mat-stroked-button routerLink="/projects">Projects</button>
+    <button mat-stroked-button routerLink="/order">Order</button>
     <button mat-stroked-button [matMenuTriggerFor]="menu">
       Settings <mat-icon aria-hidden="false">arrow_drop_down</mat-icon>
     </button>
