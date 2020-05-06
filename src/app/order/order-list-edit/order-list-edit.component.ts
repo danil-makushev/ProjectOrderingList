@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { Part } from "src/app/sharred/part.model";
+import { Part } from "src/app/shared/part.model";
 import { OrderService } from "../order.service";
 
 @Component({

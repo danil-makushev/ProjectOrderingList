@@ -1,4 +1,4 @@
-import { Part } from "../sharred/part.model";
+import { Part } from "../shared/part.model";
 
 export class Project {
   constructor(

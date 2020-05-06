@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Project } from "../project.model";
 import { OrderService } from "src/app/order/order.service";
-import { Part } from "../../sharred/part.model";
+import { Part } from "../../shared/part.model";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { ProjectService } from "../project.service";
 

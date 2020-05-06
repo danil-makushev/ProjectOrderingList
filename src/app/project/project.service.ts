@@ -1,12 +1,13 @@
-import { Injectable, EventEmitter } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Project } from "./project.model";
-import { Part } from "../sharred/part.model";
+import { Part } from "../shared/part.model";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class ProjectService {
-  public projectSelected = new EventEmitter<Project>();
+  public projectSelected = new Subject<Project>();
 
   private projects: Project[] = [
     new Project(
